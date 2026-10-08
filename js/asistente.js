@@ -12,7 +12,7 @@
   var COMPRA = { q: "¿Prefieres comprar o arrendar?", key: "Modalidad", opts: [["Comprar", "plazo"], ["Arrendar", "plazo"], ["Aún no lo sé, quiero comparar", "plazo"]] };
   var F = {
     inicio: { q: "¡Hola! Soy el asistente de HSM Chile. Te hago unas preguntas rápidas para orientarte y que tu cotización llegue completa. ¿Qué necesitas?", key: "Necesidad", opts: [
-      ["Destruir documentos", "doc_vol", "doc"], ["Destruir discos duros", "disc_cant", "disc"], ["Compactar cartón o residuos", "pre_mat", "pre"],
+      ["Prepararme para la Ley 21.719 (destrucción de documentos)", "doc_vol", "doc"], ["Destruir documentos", "doc_vol", "doc"], ["Destruir discos duros", "disc_cant", "disc"], ["Compactar cartón o residuos", "pre_mat", "pre"],
       ["Reciclar cartón para relleno (ProfiPack)", "pp_vol", "pp"], ["Compactar botellas PET o latas", "pet_vol", "pet"], ["Arrendar un equipo", "arr_eq", "arr"], ["Servicio técnico, repuestos o insumos", "ser_tipo", "ser"]] },
     // Documentos
     doc_vol: { q: "¿Cuántas hojas destruyes aproximadamente al día?", key: "Volumen diario", opts: [["Hasta 50 hojas", "doc_sec", "v1"], ["Entre 50 y 500", "doc_sec", "v2"], ["Entre 500 y 5.000", "doc_sec", "v3"], ["Más de 5.000 o un archivo completo", "doc_sec", "v4"]] },

@@ -44,6 +44,44 @@
     if (h.indexOf("cotizar") > -1) { evento("clic_cotizar", { destino: h }); }
   });
 
+  // Cuenta regresiva Ley 21.719 (vigencia plena: diciembre de 2026)
+  var diasLey = Math.ceil((new Date(2026, 11, 1) - new Date()) / 86400000);
+  document.querySelectorAll("[data-cuenta-ley]").forEach(function (el) {
+    el.textContent = diasLey > 1 ? "faltan " + diasLey + " días para su vigencia plena" : (diasLey === 1 ? "falta 1 día para su vigencia plena" : "la ley ya rige");
+  });
+
+  // Autodiagnóstico "¿Está tu empresa lista?"
+  var diag = document.getElementById("form-autodiagnostico");
+  if (diag) {
+    var pend = {
+      p1: "Identificar qué documentos con datos personales manejas (clientes, trabajadores, pacientes).",
+      p2: "Contar con una política escrita de conservación y eliminación de documentos.",
+      p3: "Destruir los documentos de forma que no se pueda leer su contenido (botarlos no basta).",
+      p4: "Registrar cada eliminación: fecha, responsable y tipo de documento.",
+      p5: "Destruir de forma segura los discos duros y equipos en desuso.",
+      p6: "Definir qué nivel de seguridad usar según el tipo de información."
+    };
+    diag.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var puntos = 0, faltan = [], sin = 0;
+      Object.keys(pend).forEach(function (k) {
+        var s = diag.querySelector("input[name=" + k + "]:checked");
+        if (!s) { sin++; return; }
+        if (s.value === "si") { puntos++; } else { faltan.push(pend[k]); }
+      });
+      var res = document.getElementById("diag-resultado");
+      if (sin) { res.hidden = false; res.className = "resultado"; res.innerHTML = "<p><strong>Responde las 6 preguntas</strong> para ver tu resultado (te faltan " + sin + ").</p>"; return; }
+      var nivel = puntos >= 5 ? ["bien", "Vas bien encaminado"] : (puntos >= 3 ? ["", "Tienes brechas importantes"] : ["", "Riesgo alto: conviene actuar antes de diciembre"]);
+      var html = "<h3>" + nivel[1] + " (" + puntos + " de 6)</h3>";
+      if (faltan.length) { html += "<p>Puntos por resolver:</p><ul>" + faltan.map(function (f) { return "<li>" + f + "</li>"; }).join("") + "</ul>"; }
+      var msg = "Autodiagnóstico Ley 21.719: " + puntos + "/6. Pendientes: " + (faltan.join(" | ") || "ninguno");
+      html += '<p><a class="btn" href="' + RAIZ + 'cotizar/?interes=destruccion-documentos&msg=' + encodeURIComponent(msg) + '">Pedir asesoría con mi resultado</a></p>';
+      html += '<p class="meta">Resultado orientativo; no constituye asesoría legal.</p>';
+      res.className = "resultado " + nivel[0]; res.innerHTML = html; res.hidden = false; res.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      evento("autodiagnostico_ley", { puntos: puntos });
+    });
+  }
+
   // Galería de producto
   var principal = document.querySelector(".galeria .principal img");
   document.querySelectorAll(".galeria .miniaturas button").forEach(function (b) {
@@ -115,6 +153,8 @@
     var interes = qs2.get("interes");
     if (eq && form.elements.equipo) { form.elements.equipo.value = eq; }
     if (interes && form.elements.interes) { form.elements.interes.value = interes; }
+    var pm = qs2.get("msg");
+    if (pm && form.elements.mensaje) { form.elements.mensaje.value = pm; }
     var msg = document.getElementById("form-mensaje");
     function aviso(clase, texto) { msg.className = "aviso " + clase; msg.textContent = texto; msg.hidden = false; msg.focus(); }
     form.addEventListener("submit", function (e) {
