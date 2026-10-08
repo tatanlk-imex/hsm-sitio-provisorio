@@ -1,0 +1,150 @@
+# Apache: compresión, caché y redirecciones desde la web anterior
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^hsm\.cl$ [NC]
+RewriteRule ^(.*)$ https://www.hsm.cl/$1 [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.hsm.cl/$1 [R=301,L]
+RedirectMatch 301 ^/tienda/?$ /productos/
+RedirectMatch 301 ^/about/?$ /nosotros/
+RedirectMatch 301 ^/soporte/?$ /servicio-tecnico/
+RedirectMatch 301 ^/arriendo/?$ /arriendo-de-equipos/
+RedirectMatch 301 ^/categoria-producto/destructora-de-papel/?$ /destructoras-de-papel/
+RedirectMatch 301 ^/categoria-producto/prensas-o-compactadoras/?$ /prensas-compactadoras/
+RedirectMatch 301 ^/categoria-producto/recicladora-de-carton/?$ /recicladora-de-carton-profipack/
+RedirectMatch 301 ^/categoria-producto/perforadoras-de-pet/?$ /perforadoras-de-pet/
+RedirectMatch 301 ^/categoria-producto/insumos/?$ /insumos/
+RedirectMatch 301 ^/categoria-producto/linea-profipack/?$ /recicladora-de-carton-profipack/
+RedirectMatch 301 ^/categoria-producto/destructora-pequena/?$ /destructoras-de-papel/compact/
+RedirectMatch 301 ^/categoria-producto/destructora-mediana/?$ /destructoras-de-papel/office-pro/
+RedirectMatch 301 ^/categoria-producto/destructora-departamental/?$ /destructoras-de-papel/departamental/
+RedirectMatch 301 ^/categoria-producto/destructora-industrial/?$ /destructoras-de-papel/industrial-powerline/
+RedirectMatch 301 ^/categoria-producto/destructora-autofeed/?$ /destructoras-de-papel/autofeed/
+RedirectMatch 301 ^/producto/174/?$ /productos/af100cc4x25-destructora-5-8-hojas-hsm/
+RedirectMatch 301 ^/producto/173/?$ /productos/af150cc45x30-destructora-9-11-hojas-hsm/
+RedirectMatch 301 ^/producto/172/?$ /productos/af300cc45x30-destructora-12-16-hojas-hsm/
+RedirectMatch 301 ^/producto/171/?$ /productos/af500cc45x30-destructora-14-18-hojas-hsm/
+RedirectMatch 301 ^/producto/66/?$ /productos/x5-cc-45x30mm-destructora-5-hojas-hsm/
+RedirectMatch 301 ^/producto/69/?$ /productos/x10-cc-45x30mm-destructora-10-hojas-hsm/
+RedirectMatch 301 ^/producto/70/?$ /productos/x13-cc-4x37mm-destructora-13-hojas-hsm/
+RedirectMatch 301 ^/producto/71/?$ /productos/x15-cc-4x37mm-destructora-15-hojas-hsm/
+RedirectMatch 301 ^/producto/73/?$ /productos/s10-sc-60mm-destructora-10-hojas-hsm-2/
+RedirectMatch 301 ^/producto/197/?$ /productos/b35cc45x30-destructora-21-26-hojas-hsm/
+RedirectMatch 301 ^/producto/192/?$ /productos/p40icc078x11-int-destructora-13-15-hojas-hsm/
+RedirectMatch 301 ^/producto/193/?$ /productos/p40icc19x15-destructora-18-24-hojas-hsm/
+RedirectMatch 301 ^/producto/194/?$ /productos/p40icc45x30-int-destructora-34-40-hojas-hsm/
+RedirectMatch 301 ^/producto/190/?$ /productos/p44icc39x50-int-destructora-39-46-hojas-hsm/
+RedirectMatch 301 ^/producto/196/?$ /productos/pure740maxcc45x30-int-destructora-20-27-hojas-hsm/
+RedirectMatch 301 ^/producto/152/?$ /productos/b35sc58-destructora-35-42-hojas-hsm/
+RedirectMatch 301 ^/producto/195/?$ /productos/p40isc58-int-destructora-51-60-hojas-hsm/
+RedirectMatch 301 ^/producto/191/?$ /productos/p44isc58-int-destructora-77-79-hojas-hsm/
+RedirectMatch 301 ^/producto/176/?$ /productos/destructora-de-discos-duros-40mm/
+RedirectMatch 301 ^/producto/175/?$ /productos/hsm-storeex-hds-230-20-x-40-50-mm/
+RedirectMatch 301 ^/producto/131/?$ /productos/prensa-horizontal-ak-807/
+RedirectMatch 301 ^/producto/136/?$ /productos/prensa-horizontal-1615/
+RedirectMatch 301 ^/producto/133/?$ /productos/prensa-horizontal-3521/
+RedirectMatch 301 ^/producto/132/?$ /productos/prensa-horizontal-3521-t/
+RedirectMatch 301 ^/producto/135/?$ /productos/prensa-horizontal-4812/
+RedirectMatch 301 ^/producto/134/?$ /productos/prensa-horizontal-7009/
+RedirectMatch 301 ^/producto/102/?$ /productos/c16cc4x25-destructora-6-7-hojas-hsm/
+RedirectMatch 301 ^/producto/109/?$ /productos/c18cc39x30-destructora-10-11-hojas-hsm/
+RedirectMatch 301 ^/producto/81/?$ /productos/c14-sc-39mm-destructora-10-12-hojas-hsm/
+RedirectMatch 301 ^/producto/95/?$ /productos/c16sc58-destructora-16-18-hojas-hsm/
+RedirectMatch 301 ^/producto/106/?$ /productos/c18sc58-destructora-19-20-hojas-hsm/
+RedirectMatch 301 ^/producto/2947/?$ /productos/hsm-powerline-450-2-39-x-40-mm/
+RedirectMatch 301 ^/producto/186/?$ /productos/destructora-prensa-industrial-hsm-sp4040-cc3-9x40/
+RedirectMatch 301 ^/producto/187/?$ /productos/destructora-prensa-industrial-hsm-sp4040-cc5-8x50/
+RedirectMatch 301 ^/producto/182/?$ /productos/powerline-sp5080-19-x-15/
+RedirectMatch 301 ^/producto/185/?$ /productos/powerline-sp5080-105-x-40-76-3/
+RedirectMatch 301 ^/producto/183/?$ /productos/powerline-sp5080-39-x-40-2/
+RedirectMatch 301 ^/producto/184/?$ /productos/powerline-sp5080-60-x-40-53-3/
+RedirectMatch 301 ^/producto/180/?$ /productos/powerline-sp5080-105-x-40-76/
+RedirectMatch 301 ^/producto/177/?$ /productos/powerline-sp5080-39-x-40/
+RedirectMatch 301 ^/producto/178/?$ /productos/powerline-sp5080-60-x-40-53/
+RedirectMatch 301 ^/producto/188/?$ /productos/destructora-industrial-hsm-fa400-2-104-130-hojas-tira-58/
+RedirectMatch 301 ^/producto/87/?$ /productos/aceite-hidraulico-vpress/
+RedirectMatch 301 ^/producto/83/?$ /productos/alambre-quicklink-295-x-3800-mm/
+RedirectMatch 301 ^/producto/82/?$ /productos/alambre-de-atadura-28-mm-40-kg/
+RedirectMatch 301 ^/producto/88/?$ /productos/aceite-para-bloque-de-corte-5-l/
+RedirectMatch 301 ^/producto/86/?$ /productos/cinta-de-atadura-wg30-500-mts-58mm-503-605-mkp80/
+RedirectMatch 301 ^/producto/85/?$ /productos/cinta-de-atadura-wg40-500-mts115mm-605-825/
+RedirectMatch 301 ^/producto/84/?$ /productos/cinta-de-atadura-wg55-400-mts146mm-860-1160-hl/
+RedirectMatch 301 ^/producto/89/?$ /productos/aceite-especial-250ml-bloque-de-corte/
+RedirectMatch 301 ^/producto/141/?$ /productos/b22cc19x15-destructora-9-11-hojas-hsm/
+RedirectMatch 301 ^/producto/142/?$ /productos/b22cc39x30-destructora-12-14-hojas-hsm/
+RedirectMatch 301 ^/producto/139/?$ /productos/b24cc078x11-destructora-6-hojas-hsm/
+RedirectMatch 301 ^/producto/140/?$ /productos/b24cc45x30destructora-14-19-hojas-hsm/
+RedirectMatch 301 ^/producto/145/?$ /productos/b32cc078x11-destructora-7-hojas-hsm/
+RedirectMatch 301 ^/producto/146/?$ /productos/b32cc1x5-destructora-5-hojas-hsm/
+RedirectMatch 301 ^/producto/144/?$ /productos/b32cc45x30-destructora-17-19-hojas-hsm/
+RedirectMatch 301 ^/producto/150/?$ /productos/b34cc078x11-destructora-8-9-hojas/
+RedirectMatch 301 ^/producto/151/?$ /productos/b34cc1x5-destructora-6-hojas-hsm/
+RedirectMatch 301 ^/producto/149/?$ /productos/b34cc19x15-destructora-12-16-hojas-hsm/
+RedirectMatch 301 ^/producto/148/?$ /productos/b34cc45x30-destructora-22-24-hojas-hsm/
+RedirectMatch 301 ^/producto/112/?$ /productos/hsmb22sc5-8/
+RedirectMatch 301 ^/producto/118/?$ /productos/b24sc58-destructora-28-30-hojas-hsm/
+RedirectMatch 301 ^/producto/122/?$ /productos/b32sc58-destructora-28-30-hojas-hsm/
+RedirectMatch 301 ^/producto/147/?$ /productos/b34sc58-destructora-35-37-hojas-hsm/
+RedirectMatch 301 ^/producto/90/?$ /productos/estrujadora-de-pet-y-caja-tetrabrik-fluid-ex-600/
+RedirectMatch 301 ^/producto/92/?$ /productos/perforador-pet-hsm-pet-pf-600-4/
+RedirectMatch 301 ^/producto/97/?$ /productos/hsm-pet-crusher-1049-sa-monofasico/
+RedirectMatch 301 ^/producto/96/?$ /productos/hsm-pet-crusher-1049-sa-trifasico/
+RedirectMatch 301 ^/producto/91/?$ /productos/perforador-pet-hsm-pet-pf-1200/
+RedirectMatch 301 ^/producto/93/?$ /productos/combinacion-de-crusher-mas-prensa-cp4988/
+RedirectMatch 301 ^/producto/2908/?$ /productos/hsm-profipack-ecochip/
+RedirectMatch 301 ^/producto/99/?$ /productos/recicladora-de-carton-hsm-profipack-c-400-1-capa/
+RedirectMatch 301 ^/producto/105/?$ /productos/recicladora-de-carton-hsm-profipack-p-425-3-capa/
+RedirectMatch 301 ^/producto/103/?$ /productos/recicladora-de-carton-hsm-profipack-p-425-trifasica-adapt/
+RedirectMatch 301 ^/producto/101/?$ /productos/recicladora-de-carton-hsm-profipack-p-425-trifasica/
+RedirectMatch 301 ^/producto/170/?$ /productos/prensa-de-bala-manual/
+RedirectMatch 301 ^/producto/169/?$ /productos/prensa-vertical-vpress-503/
+RedirectMatch 301 ^/producto/168/?$ /productos/prensa-vertical-vpress-504/
+RedirectMatch 301 ^/producto/166/?$ /productos/prensa-vertical-605-corriente-alterna/
+RedirectMatch 301 ^/producto/164/?$ /productos/prensa-vertical-610-p-trifasica/
+RedirectMatch 301 ^/producto/165/?$ /productos/prensa-vertical-610-trifasica/
+RedirectMatch 301 ^/producto/163/?$ /productos/prensa-vertical-vpress-818-plus/
+RedirectMatch 301 ^/producto/162/?$ /productos/prensa-vertical-825-plus-trifasica/
+RedirectMatch 301 ^/producto/159/?$ /productos/prensa-vertical-860-l/
+RedirectMatch 301 ^/producto/156/?$ /productos/prensa-vertical-860-p/
+RedirectMatch 301 ^/producto/157/?$ /productos/prensa-vertical-860-timesave/
+RedirectMatch 301 ^/producto/161/?$ /productos/prensa-vertical-860-eco-trifasica/
+RedirectMatch 301 ^/producto/158/?$ /productos/prensa-vertical-860-max-trifasica/
+RedirectMatch 301 ^/producto/160/?$ /productos/prensa-vertical-860-plus-trifasica/
+RedirectMatch 301 ^/producto/154/?$ /productos/prensa-vertical-1160-eco-trifasica/
+RedirectMatch 301 ^/producto/138/?$ /productos/prensa-vertical-1160-max-trifasica/
+RedirectMatch 301 ^/producto/155/?$ /productos/prensa-vertical-1160-plus-trifasica-2/
+RedirectMatch 301 ^/producto/153/?$ /productos/prensa-vertical-1160-plus-trifasica/
+RedirectMatch 301 ^/producto/137/?$ /productos/hsm-fp-3000-version-estandar/
+RedirectMatch 301 ^/producto/128/?$ /productos/prensa-horizontal-vk-807-v/
+RedirectMatch 301 ^/producto/130/?$ /productos/prensa-horizontal-vk-1206/
+RedirectMatch 301 ^/producto/129/?$ /productos/prensa-horizontal-vk-1210/
+RedirectMatch 301 ^/producto/127/?$ /productos/prensa-horizontal-vk-3008/
+RedirectMatch 301 ^/producto/126/?$ /productos/prensa-horizontal-vk-3012/
+RedirectMatch 301 ^/producto/123/?$ /productos/prensa-horizontal-vk-4012/
+RedirectMatch 301 ^/producto/124/?$ /productos/prensa-horizontal-vk-4012-2/
+RedirectMatch 301 ^/producto/125/?$ /productos/prensa-horizontal-vk-4208/
+RedirectMatch 301 ^/producto/121/?$ /productos/prensa-horizontal-vk-4812/
+RedirectMatch 301 ^/producto/120/?$ /productos/prensa-horizontal-vk-4812-p/
+RedirectMatch 301 ^/producto/119/?$ /productos/prensa-horizontal-vk-5012/
+RedirectMatch 301 ^/producto/117/?$ /productos/prensa-horizontal-vk-5016/
+RedirectMatch 301 ^/producto/114/?$ /productos/prensa-horizontal-vk-6015/
+RedirectMatch 301 ^/producto/115/?$ /productos/prensa-horizontal-vk-6015-2/
+RedirectMatch 301 ^/producto/113/?$ /productos/prensa-horizontal-vk-7215/
+RedirectMatch 301 ^/producto/110/?$ /productos/prensa-horizontal-vk-8818/
+RedirectMatch 301 ^/producto/108/?$ /productos/prensa-horizontal-vk-12018/
+RedirectMatch 301 ^/producto/107/?$ /productos/prensa-horizontal-vk-15020/
+RewriteRule ^categoria-producto/.*$ /productos/ [R=301,L]
+ErrorDocument 404 /404.html
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+Header always set X-Content-Type-Options nosniff
+Header always set Referrer-Policy strict-origin-when-cross-origin
+Header always set X-Frame-Options SAMEORIGIN
