@@ -111,7 +111,6 @@ RedirectMatch 301 ^/producto/158/?$ /productos/prensa-vertical-860-max-trifasica
 RedirectMatch 301 ^/producto/160/?$ /productos/prensa-vertical-860-plus-trifasica/
 RedirectMatch 301 ^/producto/154/?$ /productos/prensa-vertical-1160-eco-trifasica/
 RedirectMatch 301 ^/producto/138/?$ /productos/prensa-vertical-1160-max-trifasica/
-RedirectMatch 301 ^/producto/155/?$ /productos/prensa-vertical-1160-plus-trifasica-2/
 RedirectMatch 301 ^/producto/153/?$ /productos/prensa-vertical-1160-plus-trifasica/
 RedirectMatch 301 ^/producto/137/?$ /productos/hsm-fp-3000-version-estandar/
 RedirectMatch 301 ^/producto/128/?$ /productos/prensa-horizontal-vk-807-v/
@@ -120,18 +119,19 @@ RedirectMatch 301 ^/producto/129/?$ /productos/prensa-horizontal-vk-1210/
 RedirectMatch 301 ^/producto/127/?$ /productos/prensa-horizontal-vk-3008/
 RedirectMatch 301 ^/producto/126/?$ /productos/prensa-horizontal-vk-3012/
 RedirectMatch 301 ^/producto/123/?$ /productos/prensa-horizontal-vk-4012/
-RedirectMatch 301 ^/producto/124/?$ /productos/prensa-horizontal-vk-4012-2/
 RedirectMatch 301 ^/producto/125/?$ /productos/prensa-horizontal-vk-4208/
 RedirectMatch 301 ^/producto/121/?$ /productos/prensa-horizontal-vk-4812/
 RedirectMatch 301 ^/producto/120/?$ /productos/prensa-horizontal-vk-4812-p/
 RedirectMatch 301 ^/producto/119/?$ /productos/prensa-horizontal-vk-5012/
 RedirectMatch 301 ^/producto/117/?$ /productos/prensa-horizontal-vk-5016/
 RedirectMatch 301 ^/producto/114/?$ /productos/prensa-horizontal-vk-6015/
-RedirectMatch 301 ^/producto/115/?$ /productos/prensa-horizontal-vk-6015-2/
 RedirectMatch 301 ^/producto/113/?$ /productos/prensa-horizontal-vk-7215/
 RedirectMatch 301 ^/producto/110/?$ /productos/prensa-horizontal-vk-8818/
 RedirectMatch 301 ^/producto/108/?$ /productos/prensa-horizontal-vk-12018/
 RedirectMatch 301 ^/producto/107/?$ /productos/prensa-horizontal-vk-15020/
+RedirectMatch 301 ^/producto/115/?$ /productos/prensa-horizontal-vk-6015/
+RedirectMatch 301 ^/producto/124/?$ /productos/prensa-horizontal-vk-4012/
+RedirectMatch 301 ^/producto/155/?$ /productos/prensa-vertical-1160-plus-trifasica/
 RewriteRule ^categoria-producto/.*$ /productos/ [R=301,L]
 ErrorDocument 404 /404.html
 <IfModule mod_deflate.c>
