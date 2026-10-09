@@ -82,6 +82,46 @@
     });
   }
 
+  // Video de producto (YouTube se carga solo al hacer clic, para que la página sea rápida y no use cookies antes)
+  document.querySelectorAll(".video").forEach(function (v) {
+    var b = v.querySelector(".video-play");
+    if (!b) { return; }
+    b.addEventListener("click", function () {
+      var id = v.getAttribute("data-video");
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0";
+      f.title = "Video del producto";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen = true;
+      v.innerHTML = ""; v.appendChild(f);
+      evento("video_producto", { video_id: id, pagina: location.pathname });
+    });
+  });
+
+  // Pestañas de producto (sin JavaScript se ven todas las secciones seguidas)
+  var pest = document.querySelector(".pestanas");
+  if (pest) {
+    var tabs = Array.prototype.slice.call(pest.querySelectorAll("[role=tab]"));
+    var paneles = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+    var activar = function (i) {
+      tabs.forEach(function (t, j) { t.setAttribute("aria-selected", j === i ? "true" : "false"); t.tabIndex = j === i ? 0 : -1; });
+      paneles.forEach(function (p, j) { p.hidden = j !== i; });
+    };
+    pest.classList.add("con-js");
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { activar(i); if (i === 1) { evento("ver_ficha_tecnica", { pagina: location.pathname }); } });
+      t.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") { var n = (i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length; activar(n); tabs[n].focus(); }
+      });
+    });
+    activar(0);
+    if (location.hash === "#ficha") { activar(1); }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (a && /\.pdf(\?|$)/i.test(a.getAttribute("href") || "")) { evento("descargar_ficha", { archivo: (a.getAttribute("href") || "").split("/").pop() }); }
+  });
+
   // Galería de producto
   var principal = document.querySelector(".galeria .principal img");
   document.querySelectorAll(".galeria .miniaturas button").forEach(function (b) {
