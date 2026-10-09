@@ -6,8 +6,8 @@ window.HSM_CONFIG = {
   // Vacío = el formulario abre el correo del cliente con el mensaje ya escrito.
   FORM_ENDPOINT: "",
   // Número de WhatsApp comercial en formato internacional sin signos (ej. 56912345678). Vacío = el botón no aparece.
-  // PROVISORIO: número personal de prueba. Reemplazar por el WhatsApp comercial antes de publicar.
-  WHATSAPP: "56994326314",
+  // hsm.cl actual no tiene WhatsApp: vacío = los botones de WhatsApp no aparecen.
+  WHATSAPP: "",
   // Código de Google Analytics 4 (ej. G-XXXXXXXXXX). Vacío = no se mide nada.
   GA4_ID: ""
 };
