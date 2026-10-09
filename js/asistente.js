@@ -30,7 +30,7 @@
     pet_vol: { q: "¿Qué quieres compactar y en qué cantidad?", key: "Material y volumen", opts: [["Botellas PET, poca cantidad", "compra"], ["Botellas PET y latas, volumen medio", "compra"], ["Gran volumen o envases con líquido", "compra"]] },
     // Arriendo
     arr_eq: { q: "¿Qué tipo de equipo quieres arrendar?", key: "Equipo a arrendar", opts: [["Destructora de papel", "arr_t"], ["Prensa o compactadora", "arr_t"], ["Recicladora de cartón ProfiPack", "arr_t"], ["No lo sé, necesito orientación", "arr_t"]] },
-    arr_t: { q: "¿Por cuánto tiempo lo necesitas?", key: "Duración", opts: [["Por días", "plazo"], ["Por meses", "plazo"], ["Por un año", "plazo"], ["No lo sé aún", "plazo"]] },
+    arr_t: { q: "¿Por cuánto tiempo lo necesitas?", key: "Duración", opts: [["Por días", "plazo"], ["Por meses", "plazo"], ["Por años", "plazo"], ["No lo sé aún", "plazo"]] },
     // Servicio
     ser_tipo: { q: "¿Qué necesitas?", key: "Servicio", opts: [["Reparación o mantención", "ser_mod"], ["Repuestos", "ser_mod"], ["Insumos (aceite, cintas, alambres)", "ser_mod"], ["Instalación o puesta en marcha", "ser_mod"]] },
     ser_mod: { q: "¿Cuál es el modelo de tu equipo? (puedes escribir 'no sé')", key: "Modelo", input: "text", next: "plazo", ph: "Ej.: HSM B34 o V-Press 860" },
