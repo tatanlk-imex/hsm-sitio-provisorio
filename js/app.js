@@ -94,7 +94,7 @@
       f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
       f.allowFullscreen = true;
       v.innerHTML = ""; v.appendChild(f);
-      evento("video_producto", { video_id: id, pagina: location.pathname });
+      evento("video_visto", { video_id: id, pagina: location.pathname });
     });
   });
 
